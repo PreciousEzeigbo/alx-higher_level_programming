@@ -5,7 +5,7 @@
 
 class Rectangle:
     """ class rectangle"""
-    def __init___(self, width=0, height=0):
+    def __init__(self, width=0, height=0):
         """ Instantiation with optional width and height"""
         self.width = width
         self.height = height
@@ -30,7 +30,7 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self.___width = value
+        self.__width = value
 
     @height.setter
     def height(self, value):
@@ -44,7 +44,7 @@ class Rectangle:
 
     def area(self):
         """ returns rectangle area"""
-        return self.__width * self.__height
+        return self.width * self.height
 
     def perimeter(self):
         """ returns rectangle perimiter"""
