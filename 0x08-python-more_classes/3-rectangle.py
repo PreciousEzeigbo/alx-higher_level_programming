@@ -49,7 +49,10 @@ class Rectangle:
 
     def __str__(self):
         """Sets the print behavior of the Rectangle object."""
-        if self.__width >  0 and self.__height > 0:
-            return ""
-        return ("\n".join(["".join(["#" for i in range(self.__width)])
-                for j in range(self.__height)]))
+        rectangle = ""
+
+        if self.__width > 0 and self.__height > 0:
+            for y in range(self.__height):
+                rectangle += '#' * self.__width + '\n'
+
+        return rectangle[:-1]
