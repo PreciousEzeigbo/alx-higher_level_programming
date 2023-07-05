@@ -48,33 +48,44 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        if type(rect_1) is not Rectangle:
+        """returns the biggest rectangle based on the area"""
+        if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
-        if type(rect_2) is not Rectangle:
+        if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
-        return rect_1 if rect_1.area() >= rect_2.area() else rect_2
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        else:
+            return rect_2
 
     @classmethod
     def square(cls, size=0):
-        return Rectangle(size, size)
+        """returns a new Rectangle instance with width == height == size"""
+        width = size
+        height = size
+        return cls(width, height)
 
     def area(self):
         """ returns rectangle area"""
-        return self.__width * self.__height
+        return self.width * self.height
 
     def perimeter(self):
         """ returns rectangle perimiter"""
         if self.__width == 0 or self.__height == 0:
             return 0
-        return self.__width * 2 + self.__height * 2
+        return self.width * 2 + self.height * 2
 
     def __str__(self):
         """ return the rectangle with the character #
         """
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        return ("\n".join(["".join([str(self.print_symbol)
-                for i in range(self.__width)]) for j in range(self.__height)]))
+        rectangle = ""
+
+        if self.__width > 0 and self.__height > 0:
+            for y in range(self.__height):
+                rectangle += str(self.print_symbol) * self.__width + '\n'
+
+        return rectangle[:-1]
+
 
     def __repr__(self):
         """ return a string representation of the rectangle
@@ -85,5 +96,5 @@ class Rectangle:
         """Print the message when an instance of rectangle is deleted
         """
         type(self).number_of_instances -= 1
-        prinyt("Bye rectangle...")
+        print("Bye rectangle...")
 
