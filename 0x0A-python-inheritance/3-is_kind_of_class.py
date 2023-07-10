@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Module check class ans subclass
-"""
+
+"""The module is 3-is_kind_of_class"""
 
 def is_kind_of_class(obj, a_class):
     """
