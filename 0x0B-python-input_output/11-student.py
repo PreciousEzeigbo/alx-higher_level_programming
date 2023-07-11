@@ -22,6 +22,7 @@ class Student:
                 if hasattr(self, attr):
                     d[attr] = getattr(self, attr)
             return d
+
     def reload_from_json(self, json):
         """replaces all attributes of the Student instance"""
         for keys in json:
