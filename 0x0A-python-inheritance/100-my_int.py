@@ -9,4 +9,4 @@ class MyInt(int):
         return int(str(self)) != other
 
     def __ne__(self, other):
-        return int(str9self)) == other
+        return int(str(self)) == other
