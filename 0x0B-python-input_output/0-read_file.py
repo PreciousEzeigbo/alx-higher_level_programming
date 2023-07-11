@@ -12,6 +12,6 @@ def read_file(filename=""):
         Exception: when the file can be opened
 
     """
-    width open(filename, 'r', encoding="utf-8") as f:
+    with open(filename, 'r', encoding="utf-8") as f:
         read_data = f.read()
         print(read_data, end='')
