@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 if __name__ == '__main__':
-    #importing the functions
+    # importing the functions
     from calculator_1 import add, sub, mul, div
-    #Arguments:
+    # Arguments:
     a = 10
     b = 5
     print("{} + {} = {}".format(a, b, add(a, b)))
