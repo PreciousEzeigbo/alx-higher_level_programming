@@ -1,13 +1,27 @@
 #!/usr/bin/python3
-from calculator_1 import add, sub
+#!/usr/bin/python3
+if __name__ == "__main__":
+    import sys
 
-def magic_calculation(a, b):
-    if (a < b):
-        c = add(a, b)
+    nargs = len(sys.argv) - 1
+    if nargs != 3:
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        sys.exit(1)
 
-        for i in range(4, 6):
-            c = add(c, i)
+    op = sys.argv[2]
+    if op != '+' and op != '-' and op != '*' and op != '/':
+        print("Unknown operator. Available operators: +, -, * and /")
+        sys.exit(1)
 
-        return c
+    from calculator_1 import add, sub, mul, div
+    a = int(sys.argv[1])
+    b = int(sys.argv[3])
+
+    if op == '+':
+        print("{} + {} = {}".format(a, b, add(a, b)))
+    elif op == '-':
+        print("{} - {} = {}".format(a, b, sub(a, b)))
+    elif op == '*':
+        print("{} * {} = {}".format(a, b, mul(a, b)))
     else:
-        return sub(a, b)
+        print("{} / {} = {}".format(a, b, div(a, b)))
