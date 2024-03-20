@@ -1,22 +1,24 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if roman_string is None or not instance(roman_string, str):
+    if type(roman_string) is not  str or roman_string is None:
         return 0
+
     roman_numerals = {
-        1000: 'M', 900: 'CM', 500: 'D', 400: 'CD',
-        100: 'C', 90: 'XC', 50: 'L', 40: 'XL',
-        10: 'X', 9: 'IX', 5: 'V', 4: 'IV', 1: 'I'
+        ['M', 1000], ['D', 500], ['C', 100], ['L', 50],
+        ['X', 10], ['V', 5], ['I', 1]
     }
     total = 0
     prev_value = 0
 
     for symbol in roman_string:
-        value = roman_numerals.get(symbol, 0)
-        if value > prev_value:
-            total += value - 2 * prev_value
-        else:
-            total += value
-        prev_value = value
+        for element in roman_numerals:
+            if symbol == element[0]:
+                if prev_value == 0 or prev_value >= element[1]:
+                    total += element[1]
+                elif prev_value < element[1]:
+                    total += element[1] - (prev_value * 2)
+
+                prev_value = element[1]
 
     return total
 
