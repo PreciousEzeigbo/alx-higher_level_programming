@@ -66,6 +66,38 @@ class Rectangle:
         else:
             return 2 * (self.width + self.height)
 
+    def __draw_rectangle(self):
+        """
+
+        Draw the Rectangle with their size
+
+        Returns:
+            str: `Empty` If width or height is `0`,
+            otherwise returns a string with the Rectangle.
+
+        """
+
+        rect_str = ''
+        w = self.__width
+        h = self.__height
+
+        if w == 0 or h == 0:
+            return rect_str
+
+        for i in range(h):
+            for j in range(w):
+                rect_str += '#'
+
+            if i != h - 1:
+                rect_str += '\n'
+
+        return rect_str
+
     def __str__(self):
-        """Sets the print behaviour of the rectangle."""
-         return ("#" * self.width + "\n") * self.height
+        """
+
+        Returns a string with the representation of the Rectangle.
+
+        """
+
+        return self.__draw_rectangle()
