@@ -68,9 +68,4 @@ class Rectangle:
 
     def __str__(self):
         """Sets the print behaviour of the rectangle."""
-        rectangle = ""
-        if self.__width > 0 and self.__height > 0:
-            for y in range(self.__height):
-                rectangle += '#' * self__width + '\n'
-
-        return rectangle[:-1]
+         return ("#" * self.width + "\n") * self.height
