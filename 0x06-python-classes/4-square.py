@@ -18,7 +18,7 @@ class Square:
         """Returns the size"""
         return self.__size
 
-    @property.setter
+    @size.setter
     def size(self, value):
         """Sets the size of the square,
         ensuring it's an integer and non-negative.
@@ -36,8 +36,5 @@ class Square:
         self.__size = value
 
     def area(self):
-        """Finds the area of the square
-        Returns:
-            int: The area of the square.
-        """
+        """Returns the area of the square."""
         return self.__size * self.__size
