@@ -70,7 +70,7 @@ class Rectangle:
         else:
             return 2 * (self.width + self.height)
 
-    def __draw_rectangle(self):
+    def __str__(self):
         """
 
         Draw the Rectangle with their size
@@ -85,15 +85,6 @@ class Rectangle:
             return ""
         rows = [self.print_symbol * self.__width for _ in range(self.__height)]
         return "\n".join(rows)
-
-    def __str__(self):
-        """
-
-        Returns a string with the representation of the Rectangle.
-
-        """
-
-        return self.__draw_rectangle()
 
     def __repr__(self):
         """
