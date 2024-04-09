@@ -81,21 +81,10 @@ class Rectangle:
 
         """
 
-        rect_str = ''
-        w = self.__width
-        h = self.__height
-
-        if w == 0 or h == 0:
-            return rect_str
-
-        for i in range(h):
-            for j in range(w):
-                rect_str += self.print_symbol
-
-            if i != h - 1:
-                rect_str += '\n'
-
-        return rect_str
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        rows = [self.print_symbol * self.__width for _ in range(self.__height)]
+        return "\n".join(rows)
 
     def __str__(self):
         """
