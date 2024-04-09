@@ -140,8 +140,8 @@ class Rectangle:
         else:  # Areas are equal
             return rect_1
 
-        @classmethod
-        def square(cls, size=0):
+    @classmethod
+    def square(cls, size=0):
         """
         Creates a new Rectangle instance (a square).
         Args:
