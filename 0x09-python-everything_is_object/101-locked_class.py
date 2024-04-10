@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-""" LockedClass
+""" LockedClass with no class/object attributes
 """
 
 
 class LockedClass:
-    __slots__= ['first_name']
+    """Locked class"""
+    __slots__ = ['first_name']
