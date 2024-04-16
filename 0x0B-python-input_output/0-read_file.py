@@ -4,9 +4,7 @@
 
 def read_file(filename=""):
     """The function that reads the file and prints to stduot"""
-    with open(filename) as f:
-        #  Read the entire file contents
-        read_data = f.read()
-
-    #  Print the contents to stduot
-    print(read_data)
+    with open(filename, encoding='utf-8') as f:
+        for line in f:
+            #  Print the contents to stduot
+            print(line)
