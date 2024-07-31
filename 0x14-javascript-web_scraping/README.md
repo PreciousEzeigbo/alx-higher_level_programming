@@ -1,12 +1,12 @@
 <h1>Javascript-web_scraping</h1>
 
 <h2>General</h2>
-<li>Why JavaScript programming is amazing
-How to manipulate JSON data
-How to use request and fetch API
-How to read and write a file using fs module
-Install Node 10
-</li>
+<li>Why JavaScript programming is amazing</li>
+<li></li>How to manipulate JSON data</li>
+<li></li>How to use request and fetch API</li>
+<li>How to read and write a file using fs module</li>
+<li>Install Node 10</li>
+
 
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
