@@ -9,7 +9,7 @@ const convertedArg = parseInt(firstArgs, 10);
 
 // check if conversion was successful
 if (!isNaN(convertedArg)) {
-  console.log('My nuber:' + convertedArg);
+  console.log('My number: ' + convertedArg);
 } else {
   console.log('Not a number');
 }
