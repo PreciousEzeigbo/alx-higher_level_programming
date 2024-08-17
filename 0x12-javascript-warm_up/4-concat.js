@@ -7,7 +7,7 @@ const firstArg = args[0]; // gets first argument
 
 const secondArg = args[1]; // gets second argument
 
-/*if (firstArg === undefined || secondArg === undefined) {
+/* if (firstArg === undefined || secondArg === undefined) {
   console.log(firstArg + ' is ' + secondArg);
 }
 */
